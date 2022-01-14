@@ -8,7 +8,7 @@ class DbContext {
   Account = mongoose.model('Account', AccountSchema);
   Profiles = mongoose.model('Profile', ProfileSchema, 'accounts');
 
-  Posts = mongoose.model('Posts', PostSchema)
+  Posts = mongoose.model('Posts', PostSchema);
 }
 
 export const dbContext = new DbContext()

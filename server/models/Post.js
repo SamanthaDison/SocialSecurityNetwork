@@ -6,7 +6,7 @@ export const PostSchema = new Schema({
 
   Body: { type: String, required: true },
 
-  creatorId: { type: Schema.Types.ObjectId, ref: 'profile', required: true },
+  creatorId: { type: ObjectId, ref: 'Profile', required: true },
 
   // imgUrl: { type: String, required: true }
 
@@ -14,9 +14,9 @@ export const PostSchema = new Schema({
   { timestamp: true, toJSON: { virtuals: true } }
 
 )
-PostsSchema.virtual('creator', {
+PostSchema.virtual('creator', {
   localField: 'creatorId',
   foreignField: '_id',
   justOne: true,
-  ref: 'profile'
+  ref: 'Profile'
 })
