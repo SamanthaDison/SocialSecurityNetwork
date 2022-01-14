@@ -10,7 +10,7 @@ export class PostsController extends BaseController {
       .use(Auth0Provider.getAuthorizedUserInfo)
       .get('', this.getAll)
       .get('/id:, this.getById')
-    // .post('', this.create)
+      .post('', this.create)
     // .put('/:id',this.edit )
     // .delete('/:id', this.remove)
   }
@@ -19,11 +19,30 @@ export class PostsController extends BaseController {
     try {
       const posts = await postsService.getAll(req.query)
       return res.send(posts)
-    } catch (err) {
-      next(err)
+    } catch (error) {
+      next(error)
     }
   }
 
-  async getById(req)
+  async getById(req, res, next) {
+
+    try {
+      const post = await postsService.getById(req.params.id)
+      return res.send(post)
+
+    } catch (error) {
+      next(error)
+
+    }
+  }
+  async create(req, res, next) {
+    try {
+      req.body.creatorId = req.userInfo.id
+      const post = await postsService.create(req.body)
+      return res.send(post)
+    } catch (error) {
+      next(error)
+    }
+  }
 
 }
