@@ -2,3 +2,20 @@
 .filter-row{
     height: 15vh;
 }
+
+body{
+    background-image: url("https://cdn.shopify.com/s/files/1/0254/2381/products/IMG_6858_1024x1024.jpg?v=1480971007");
+}
+
+.height{
+    padding-top: 6em;
+}
+
+
+
+.profile-picture{
+    height: 90px;
+    width: 90px;
+    border-radius: 50px;
+    object-fit: cover;
+}
