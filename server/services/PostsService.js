@@ -33,6 +33,18 @@ class PostsService {
     await original.save()
     return original
   }
+  async remove(id, userId) {
+    const original = await this.getById(id)
+    if (original.creatorId.toString() !== userId) {
+      throw new BadRequest('no remove for you!!!!')
+
+    }
+    await original.remove()
+    // NOTE dont use below if you are already finding it
+    // await dbContext.Posts.findOneAndRemove({ _id: id })
+    return original
+  }
+
 }
 
 export const postsService = new PostsService
