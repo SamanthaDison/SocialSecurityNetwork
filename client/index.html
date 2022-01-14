@@ -9,10 +9,32 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
   <title>SocialSecurityNetwork</title>
 </head>
 
-<body>
+<style>
+  /* This is for wire framing to see our rows/columns */
+  body.debug .container,
+  body.debug .container-fluid {
+    outline: 2px double blue;
+    outline-offset: -2px;
+  }
+
+  body.debug .row {
+    outline: 2px dashed red;
+    outline-offset: -2px;
+  }
+
+  body.debug [class*="col-"
+
+  ] {
+    outline: 2px dotted forestgreen;
+    outline-offset: -3px;
+  }
+</style>
+
+<body class="debug">
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
       <a class="navbar-brand" href="#">
@@ -34,20 +56,21 @@
   </header>
   <main id="app">
     <div class="container-fluid">
-      <div class="row my-3">
-        <div class="col-lg-5" id="auth-settings">
-          <div class="card p-2 skeleton-loader">
-            <div class="card-title p-2">
-              <div class="d-flex align-items-center">
-                <div class="skeleton-loader avatar"></div>
-                <div class="skeleton-loader text mx-2"></div>
-              </div>
-            </div>
-            <div class="card-body border-top">
-              <div class="skeleton-loader text block"></div>
-              <div class="skeleton-loader text block"></div>
-              <div class="skeleton-loader text block"></div>
-            </div>
+      <div class="row my-3 filter-row align-content-center">
+        <div class="col-12">
+          <div class="row justify-content-center text-center">
+            <div class="col-4">BUTTON 1</div>
+            <div class="col-4">BUTTON 2</div>
+            <div class="col-4">BUTTON 3</div>
+          </div>
+        </div>
+      </div>
+      <!-- POSTS WILL BE DRAWN TO THIS ROW -->
+      <div class="row">
+        <div class="col-12 m-3 d-flex">
+          <!-- POST TEMPLATE -->
+          <div class="bg-white rounded shadow">
+
           </div>
         </div>
       </div>
