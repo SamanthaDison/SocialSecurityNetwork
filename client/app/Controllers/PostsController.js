@@ -1,6 +1,7 @@
 import { ProxyState } from "../AppState.js";
 import { postsService } from "../Services/PostsService.js";
-import { getPostForm } from "./Component/PostForm.js"
+import { getPostForm } from "./Component/PostForm.js";
+
 
 
 function _drawPosts() {
@@ -19,7 +20,11 @@ export class PostsController {
     }
     drawPosts() {
         _drawPosts()
+    }
+
+    showPostForm() {
         document.getElementById('modal-body-slot').innerHTML = getPostForm()
+
     }
 
     async createPost(id) {
