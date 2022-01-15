@@ -23,7 +23,7 @@ export function getPostForm(postData = {}) {
   <div>
     <label for="imgURL" class="form-label">Image</label>
     <input type="url" class="form-control" name="imgURL" id="imgURL" aria-describedby="imgURL" placeholder="imgURL..."
-      value="${newPost.imgURL}" required>
+      value="${newPost.imgUrl}" required>
   </div>
 
 </div>
