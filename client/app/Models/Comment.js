@@ -1,5 +1,9 @@
 export class Comment {
-    constructor(data)
+    constructor(data) {
+        this.body = data.body
+        this.creator = data.creator
+
+    }
 
 
     get Template() {
