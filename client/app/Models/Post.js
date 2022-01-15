@@ -1,16 +1,16 @@
 export class Post {
-    constructor(data) {
-        this.title = data.title
-        this.body = data.body
-        this.creator = data.creator
-        this.imgUrl = data.imgUrl
-        this.id = data._id
-    }
+  constructor(data) {
+    this.title = data.title
+    this.body = data.body
+    this.creator = data.creator
+    this.imgUrl = data.imgUrl || 'http://placehold.it/300x300'
+    this.id = data._id
+  }
 
-    // NEED TO INTERPOLATE FOR THE TEMPLATE
+  // NEED TO INTERPOLATE FOR THE TEMPLATE
 
-    get Template() {
-        return `<div class="col-12 post-col">
+  get Template() {
+    return `<div class="col-12 post-col">
           <div class="row bg-white rounded shadow p-1 m-2">
             <div class="col-3">
               <div>
@@ -38,6 +38,6 @@ export class Post {
             </div>
           </div>
         </div>`
-    }
+  }
 
 }
