@@ -19,3 +19,10 @@ body{
     border-radius: 50px;
     object-fit: cover;
 }
+
+.profile-picture-comments{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    object-fit: cover;
+}
