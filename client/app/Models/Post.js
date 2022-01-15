@@ -26,7 +26,7 @@ export class Post {
                 <div class="p-3">
                   <div class="d-flex justify-content-between">
                     <h1>${this.title}</h1>
-                    <i class="mdi mdi-comment-plus-outline fs-1 selectable" data-bs-toggle="offcanvas"
+                    <i class="mdi mdi-comment-plus-outline fs-1 selectable" onclick="app.commentsController.getCommentsByPostId('${this.id}')" data-bs-toggle="offcanvas"
                       data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
                   </div>
                   <p class="pt-4">${this.body}</p>

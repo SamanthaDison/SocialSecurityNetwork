@@ -1,6 +1,5 @@
 import { ProxyState } from "../AppState.js";
 import { commentsService } from "../Services/CommentsService.js";
-import { getCommentForm } from "../Component/CommentForm.js"
 
 
 function _drawComments() {
@@ -15,10 +14,14 @@ export class CommentsController {
     ProxyState.on('comments', _drawComments)
     // commentsService.getAllComments()
     console.log('comments')
+  }
 
-
-
-
+  async getCommentsByPostId(postId) {
+    try {
+      commentsService.getCommentsByPostId(postId)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   async createComment(id) {
@@ -27,7 +30,9 @@ export class CommentsController {
       console.log('submitted')
       const form = window.event.target
       const commentData = {
+        // @ts-ignore
         title: form.title.value,
+        // @ts-ignore
         body: form.body.value
 
       }
@@ -37,8 +42,10 @@ export class CommentsController {
       else {
         await commentsService.editComment(commentData, id)
       }
+      // @ts-ignore
       form.reset()
 
+      // @ts-ignore
       bootstrap.modal, getOrCreateInstance(document.getElementById('new-listing')).hide()
     } catch (error) {
       console.log(error.message)
@@ -47,12 +54,13 @@ export class CommentsController {
 
   async editComment(id) {
     try {
-      let foundComment = Proxystate.comments.find(c => c.id == id)
+      // @ts-ignore
+      let foundComment = ProxyState.comments.find(c => c.id == id)
+      // @ts-ignore
       bootstrap.Modal.getOrCreateInstance(document.getElementById('new-listing')).toggle()
-      document.getElementById('modal-body-slot').innerHTML = getCommentForm(foundComment)
 
     } catch (error) {
-      consolog('error message in comments controller')
+      console.log('error message in comments controller')
     }
   }
 
@@ -60,7 +68,7 @@ export class CommentsController {
     try {
       const foundComment = ProxyState.comments.find(c => c.id == id)
       console.log('found comment for delete', foundComment)
-      if (await confirmation(`Are you sure you want to delete ${foundComment.model}?`)) {
+      if (await confirm(`Are you sure you want to delete ${foundComment.model}?`)) {
 
       }
 
