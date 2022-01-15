@@ -28,7 +28,8 @@ export class PostsController {
             const form = window.event.target
             const postData = {
                 title: form.title.value,
-                body: form.body.value
+                body: form.body.value,
+                imgUrl: form.body.value
 
             }
             if (id == "undefined") {
@@ -59,9 +60,14 @@ export class PostsController {
 
     async removePost(id) {
         try {
+            const foundPost = ProxyState.posts.find(p => p.id == id)
+            console.log('found post for delete', foundPost)
+            if (await confirmation(`Are you sure you want to delete ${foundPost.model}?`)) {
+
+            }
 
         } catch (error) {
-
+            console.log('error.messge')
         }
     }
 
