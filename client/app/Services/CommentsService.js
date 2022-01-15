@@ -26,6 +26,12 @@ class CommentsService {
     ProxyState.comments = ProxyState.comments
 
   }
+
+  async removeComment(id) {
+    const res = await api.delete('comments/${id}')
+    console.log('deleted comment res', res)
+    ProxyState.comments = ProxyState.comments.filter(c => c.id !== id)
+  }
 }
 
 export const commentsService = new CommentsService()
