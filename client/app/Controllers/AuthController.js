@@ -18,7 +18,7 @@ function drawUser() {
 function _drawAuthSettings() {
   const elem = document.getElementById('auth-settings')
   if (!elem) { return }
-  elem.innerHTML = /* html */`
+  elem.innerHTML = /* html */ `
   <div class="card p-2 elevation-4">
     <div class="card-title p-2">
       <div class="d-flex align-items-center">
