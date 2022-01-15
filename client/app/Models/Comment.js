@@ -1,6 +1,6 @@
 export class Comment {
     constructor(data) {
-        this.body = data.body
+        this.body = data.Body
         this.creator = data.creator
 
     }

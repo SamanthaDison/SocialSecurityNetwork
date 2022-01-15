@@ -8,10 +8,10 @@ export const PostSchema = new Schema({
 
   creatorId: { type: ObjectId, ref: 'Profile', required: true },
 
-  imgUrl: { type: String, required: true }
+  imgUrl: { type: String, required: true, default: 'http://placehold.it300x300' }
 
 },
-  { timestamp: true, toJSON: { virtuals: true } }
+  { timestamps: true, toJSON: { virtuals: true } }
 
 )
 PostSchema.virtual('creator', {

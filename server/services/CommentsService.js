@@ -9,6 +9,11 @@ class CommentsService {
     return comments
   }
 
+  async getCommentsByPostId(postId) {
+    // postId: is the key; postId is the id being passed through
+    const comments = await dbContext.Comments.find({ postId: postId }).populate('creator', 'name picture')
+    return comments
+  }
   async getById(id) {
 
     const comment = await dbContext.Comments.findById(id).populate('creator', 'name picture')
@@ -48,4 +53,4 @@ class CommentsService {
 
 }
 
-export const commentsService = new CommentsService
+export const commentsService = new CommentsService()

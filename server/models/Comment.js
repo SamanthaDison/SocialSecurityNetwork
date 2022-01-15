@@ -11,7 +11,7 @@ export const CommentSchema = new Schema({
   postId: { type: ObjectId, ref: 'Post', required: false },
 
 },
-  { timestamp: true, toJSON: { virtuals: true } }
+  { timestamps: true, toJSON: { virtuals: true } }
 
 )
 CommentSchema.virtual('creator', {
