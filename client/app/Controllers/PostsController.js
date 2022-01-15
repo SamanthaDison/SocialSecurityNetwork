@@ -1,12 +1,13 @@
 import { ProxyState } from "../AppState.js";
 import { postsService } from "../Services/PostsService.js";
-import { getPostForm } from "../Component/PostForm.js"
+import { getPostForm } from "./Component/PostForm.js"
 
 
 function _drawPosts() {
     // const posts = ProxyState.posts
     let template = ''
     ProxyState.posts.forEach(p => template += p.Template)
+
     document.getElementById('posts').innerHTML = template
 }
 

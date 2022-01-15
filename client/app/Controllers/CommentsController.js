@@ -13,7 +13,7 @@ function _drawComments() {
 export class CommentsController {
   constructor() {
     ProxyState.on('comments', _drawComments)
-    commentsService.getAllComments()
+    // commentsService.getAllComments()
     console.log('comments')
 
 
