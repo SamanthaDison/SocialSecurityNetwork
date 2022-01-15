@@ -8,7 +8,7 @@ export const PostSchema = new Schema({
 
   creatorId: { type: ObjectId, ref: 'Profile', required: true },
 
-  // imgUrl: { type: String, required: true }
+  imgUrl: { type: String, required: true }
 
 },
   { timestamp: true, toJSON: { virtuals: true } }
