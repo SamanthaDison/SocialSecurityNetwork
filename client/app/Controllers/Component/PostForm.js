@@ -8,7 +8,7 @@ export function getPostForm(postData = {}) {
   return /*html*/`
 <form onsubmit="app.postsController.createPost('${newPost.id}')" >
   
-  <div class='mb-3 d-flex justify-content-between'>
+  <div class='mb-3 justify-content-between'>
   <div>
     <label for="title" class="form-label">Title</label>
     <input type="text" class="form-control" name="title" id="title" aria-describedby="title" placeholder="Title..."
@@ -16,11 +16,12 @@ export function getPostForm(postData = {}) {
   </div>
   <div>
     <label for="body" class="form-label">Body</label>
-    <input type="text" class="form-control" name="body" id="body" aria-describedby="body" placeholder="Body..."
+    
+    <input type="text" class="form-control input-large form-body" name="body" id="body" aria-describedby="body" placeholder="Body..."
       value="${newPost.body}" required>
   </div>
   <div>
-    <label for="imgURL" class="form-label">imgURL</label>
+    <label for="imgURL" class="form-label">Image</label>
     <input type="url" class="form-control" name="imgURL" id="imgURL" aria-describedby="imgURL" placeholder="imgURL..."
       value="${newPost.imgURL}" required>
   </div>
