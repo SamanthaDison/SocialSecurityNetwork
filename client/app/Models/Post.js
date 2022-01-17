@@ -44,7 +44,7 @@ export class Post {
                   <div class="col-6 d-flex align-items-center justify-content-end">
                     <p class="pr-2">${this.creator.name}</p>
                     <img class="profile-picture"
-                      src="${this.imgUrl}"
+                      src="${this.creator.picture}"
                       alt="OLD LADY">
                   </div>
                 </div>
