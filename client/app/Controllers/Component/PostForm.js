@@ -21,8 +21,8 @@ export function getPostForm(postData = {}) {
       value="${newPost.body}" required>
   </div>
   <div>
-    <label for="imgUrl" class="form-label">Image</label>
-    <input type="url" class="form-control" name="imgUrl" id="imgUrl" aria-describedby="imgUrl" placeholder="imgUrl..."
+    <label for="imgURL" class="form-label">Image</label>
+    <input type="url" class="form-control" name="imgURL" id="imgURL" aria-describedby="imgURL" placeholder="imgURL..."
       value="${newPost.imgUrl}" required>
   </div>
 

@@ -33,9 +33,12 @@ export class PostsController {
             console.log('submitted')
             const form = window.event.target
             const postData = {
+                // @ts-ignore
                 title: form.title.value,
+                // @ts-ignore
                 body: form.body.value,
-                imgUrl: form.imgUrl.value
+                // @ts-ignore
+                imgUrl: form.body.value
 
             }
             if (id == "undefined") {
@@ -44,8 +47,10 @@ export class PostsController {
             else {
                 await postsService.editPost(postData, id)
             }
+            // @ts-ignore
             form.reset()
 
+            // @ts-ignore
             bootstrap.Modal.getOrCreateInstance(document.getElementById('new-listing')).hide()
         } catch (error) {
             console.log(error.message)
@@ -55,12 +60,13 @@ export class PostsController {
 
     async editPost(id) {
         try {
-            let foundPost = Proxystate.posts.find(p => p.id == id)
+            let foundPost = ProxyState.posts.find(p => p.id == id)
+            // @ts-ignore
             bootstrap.Modal.getOrCreateInstance(document.getElementById('new-listing')).toggle()
             document.getElementById('modal-body-slot').innerHTML = getPostForm(foundPost)
 
         } catch (error) {
-            consolog('error message in posts controller')
+            console.log('error message in posts controller')
         }
     }
 
@@ -68,7 +74,7 @@ export class PostsController {
         try {
             const foundPost = ProxyState.posts.find(p => p.id == id)
             console.log('found post for delete', foundPost)
-            if (await confirmation(`Are you sure you want to delete ${foundPost.model}?`)) {
+            if (await confirm(`Are you sure you want to delete ${foundPost.model}?`)) {
 
             }
 

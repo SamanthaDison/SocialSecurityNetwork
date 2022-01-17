@@ -11,6 +11,10 @@ body{
     padding-top: 6em;
 }
 
+.img-post {
+    max-width: 98%;
+    height: auto;
+}
 
 
 .profile-picture{

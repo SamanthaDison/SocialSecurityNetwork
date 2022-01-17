@@ -26,7 +26,7 @@ export class Post {
                 <div class="p-3">
                   <div class="d-flex justify-content-between">
                     <h1>${this.title}</h1>
-                    <i class="mdi mdi-comment-plus-outline fs-1 selectable" data-bs-toggle="offcanvas"
+                    <i class="mdi mdi-comment-plus-outline fs-1 selectable" onclick="app.commentsController.getCommentsByPostId('${this.id}')" data-bs-toggle="offcanvas"
                       data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
                   </div>
                   <p class="pt-4">${this.body}</p>
@@ -44,7 +44,7 @@ export class Post {
                   <div class="col-6 d-flex align-items-center justify-content-end">
                     <p class="pr-2">${this.creator.name}</p>
                     <img class="profile-picture"
-                      src="${this.imgUrl}"
+                      src="${this.creator.picture}"
                       alt="OLD LADY">
                   </div>
                 </div>
