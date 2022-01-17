@@ -35,7 +35,7 @@ export class PostsController {
             const postData = {
                 title: form.title.value,
                 body: form.body.value,
-                imgUrl: form.body.value
+                imgUrl: form.imgUrl.value
 
             }
             if (id == "undefined") {
